@@ -1,6 +1,14 @@
 body {
+  font-size: 16px;
+  line-height: 18.75px;
   background-color: $bgColor;
   color: $textColor;
+  overflow: hidden;
+
+  @media (min-width: breakpoint-min(xxxl)) {
+    font-size: 18px;
+    line-height: 20.75px;
+  }
 }
 
 .gradient {

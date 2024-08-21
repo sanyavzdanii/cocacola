@@ -12,7 +12,11 @@
     padding-left: 0;
 
     .nav-item {
-      margin-right: 18px;
+      margin-right: 14px;
+
+      @media (min-width: breakpoint-min(xl)) {
+        margin-right: 18px;
+      }
     }
 
     .nav-link {
@@ -23,40 +27,120 @@
       color: $textColor;
       border: 2px solid transparent;
       border-radius: 15px 15px 15px 0;
-      padding: 6px 16px;
+      padding: 8px 16px 7px;
 
       &:hover {
-        color: rgba($textColor, 0.93);
-        border-color: rgba($textColor, 0.95);
-        transition: border 0.5s ease-in-out, color 0.3s ease-in-out;
+        @media (hover: hover) {
+          color: rgba($textColor, 0.93);
+          border-color: rgba($textColor, 0.95);
+          transition: border 0.5s ease-in-out, color 0.3s ease-in-out;
+        }
       }
 
       &:active {
         background: $textColor;
         color: $bgColor;
       }
-    }
 
-    .blyat {
-      position: absolute;
-      top: 50%;
-      right: 0;
-    }
-
-    .dropdown-menu {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 0.25rem;
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-
-      .dropdown-item {
-        color: #333;
-
-        &:hover {
-          background-color: #007bff;
-          color: #fff;
-        }
+      @media (min-width: breakpoint-min(xxxl)) {
+        font-size: 18px;
+        line-height: 20.75px;
       }
     }
+  }
+}
+
+.header__menu-wrapper {
+  width: calc(100% - 460px);
+  max-width: 660px;
+}
+
+#menu-button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -15px;
+    margin-right: -15px;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    background: $primaryColor;
+    border-radius: 50% 0 50% 50%;
+    transition: all 0.35s ease-in-out;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -7px;
+    margin-right: -20px;
+    z-index: -1;
+    width: 60px;
+    height: 60px;
+    background: rgba($black, 0.4);
+    border-radius: 50% 0 50% 50%;
+  }
+
+  .bar1, .bar2, .bar3 {
+    position: relative;
+    z-index: 2;
+    width: 34px;
+    height: 3.67px;
+    background-color: $gray-200;
+    margin: 5.5px 0;
+    transition: 0.45s;
+  }
+
+  &.touch {
+    &:after {
+      width: 1520px;
+      height: 1520px;
+      margin-top: -650px;
+      margin-right: -650px;
+    }
+
+    .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-8px, 5px) ;
+      transform: rotate(-45deg) translate(-8px, 5px) ;
+    }
+
+    .bar2 {
+      opacity: 0;
+    }
+
+    .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -6px) ;
+      transform: rotate(45deg) translate(-8px, -6px) ;
+    }
+  }
+}
+
+.second-menu {
+  position: absolute;
+  z-index: 2;
+  margin-left: 30%;
+  margin-top: 10%;
+  visibility: hidden;
+  opacity: 0;
+  font-family: $secondFont;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 36.98px;
+  &.show {
+    margin-left: 7%;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s ease-in, opacity 0.5s ease-in, margin-left 0.3s ease-in-out;
+    transition-delay: 220ms;
+  }
+
+  .nav-link {
+      margin-bottom: 38px;
   }
 }

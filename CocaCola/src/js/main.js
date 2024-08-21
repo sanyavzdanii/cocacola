@@ -4,6 +4,12 @@ import '@popperjs/core';
 import '../scss/style.scss';
 
 $(document).ready(function() {
+    // Меню шариком
+    $('#menu-button').on('click', function(e) {
+        $('#menu-button').toggleClass("touch");
+        $('.second-menu').toggleClass("show");
+    });
+
     // Обработчик формы обратной связи
     $('#contact-form').on('submit', function(e) {
         e.preventDefault();

@@ -5,11 +5,29 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Risque';
+  src: url('/assets/fonts/Risque-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px,
+        xxxl: 2000px
+);
+
 $lightColor: #EEEEEE;
 $lightGrayColor: #686D76;
 $grayColor: #373A40;
-$primaryColor: #DC5F00;
 
 $firstFont: 'Roboto';
+$secondFont: 'Risque';
 $bgColor: #141429;
 $textColor: #FFF;
+$primaryColor: #D02B2B;
