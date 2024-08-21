@@ -1,0 +1,31 @@
+# Wordpress - ignore core, configuration, examples, uploads and logs.
+# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+
+# Node modules
+node_modules/
+
+# Webpack output
+CocaCola/dist/
+
+# Log files
+*.log
+
+# WordPress core files
+wordpress/*
+!wordpress/.gitignore
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# All plugins
+#
+# Note: If you wish to whitelist plugins,
+# uncomment the next line
+#/wp-content/plugins
+
+# All themes
+#
+# Note: If you wish to whitelist themes,
+# uncomment the next line
+#/wp-content/themes
