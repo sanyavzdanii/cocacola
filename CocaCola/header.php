@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="<?php if (is_page_template('home.php')) : ?>h100<?php endif ?>">
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
             </a>
         </div>
         <div class="header__menu-wrapper d-flex justify-content-between align-items-center me-1 me-xl-0">
-            <nav class="header__menu navbar navbar-expand-lg d-none d-md-block">
+            <nav class="header__menu navbar navbar-expand-lg d-none d-xl-block">
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <?php
                     wp_nav_menu(array(
@@ -22,6 +22,8 @@
                         'container' => false,
                         'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0',
                         'walker' => new Bootstrap_NavWalker(),
+                        'before'       => '<span>',
+                        'after'        => '</span>',
                     ));
                     ?>
                 </div>
@@ -36,7 +38,7 @@
                     wp_nav_menu(array(
                         'theme_location' => 'main-menu-2',
                         'container' => false,
-                        'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0',
+                        'menu_class' => 'navbar-nav mb-2 mb-lg-0',
                         'walker' => new Bootstrap_NavWalker(),
                     ));
                     ?>

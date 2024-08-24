@@ -1,3 +1,7 @@
+.header {
+  position: fixed;
+}
+
 .header__logo {
   a {
     color: $lightColor;
@@ -12,7 +16,44 @@
     padding-left: 0;
 
     .nav-item {
+      padding: 8px 16px 7px;
+      position: relative;
+      display: inline-block;
       margin-right: 14px;
+      overflow: hidden;
+      &::after {
+        content: attr(data-text);
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        color: $primaryColor;
+        font-size: 16px;
+        text-align: center;
+        transition: transform 0.3s ease;
+
+        @media (min-width: breakpoint-min(xxxl)) {
+          font-family: $firstFont;
+          font-size: 18px;
+        }
+      }
+      &:hover span {
+        @media (hover: hover) {
+          transform: translateY(-60%);
+        }
+      }
+      &:hover::after {
+        @media (hover: hover) {
+          transform: translateY(-50%);
+          top: 60%;
+        }
+      }
+
+      span {
+        display: block;
+        transition: transform 0.4s ease;
+      }
 
       @media (min-width: breakpoint-min(xl)) {
         margin-right: 18px;
@@ -20,27 +61,13 @@
     }
 
     .nav-link {
+      height: 62px;
+      margin-bottom: -31px;
       font-family: $firstFont;
       font-size: 16px;
       line-height: 18.75px;
       text-decoration: none;
       color: $textColor;
-      border: 2px solid transparent;
-      border-radius: 15px 15px 15px 0;
-      padding: 8px 16px 7px;
-
-      &:hover {
-        @media (hover: hover) {
-          color: rgba($textColor, 0.93);
-          border-color: rgba($textColor, 0.95);
-          transition: border 0.5s ease-in-out, color 0.3s ease-in-out;
-        }
-      }
-
-      &:active {
-        background: $textColor;
-        color: $bgColor;
-      }
 
       @media (min-width: breakpoint-min(xxxl)) {
         font-size: 18px;
@@ -51,8 +78,10 @@
 }
 
 .header__menu-wrapper {
-  width: calc(100% - 460px);
-  max-width: 660px;
+  @media (min-width: breakpoint-min(xl)) {
+    width: calc(100% - 460px);
+    max-width: 660px;
+  }
 }
 
 #menu-button {
@@ -124,23 +153,52 @@
 .second-menu {
   position: absolute;
   z-index: 2;
-  margin-left: 30%;
-  margin-top: 10%;
   visibility: hidden;
   opacity: 0;
   font-family: $secondFont;
-  font-size: 32px;
+  font-size: 24px;
+  line-height: 28.98px;
   font-weight: 400;
-  line-height: 36.98px;
   &.show {
-    margin-left: 7%;
     visibility: visible;
     opacity: 1;
     transition: visibility 0.5s ease-in, opacity 0.5s ease-in, margin-left 0.3s ease-in-out;
-    transition-delay: 220ms;
+    transition-delay: 200ms;
+
+    @media (max-width: breakpoint-max(xl)) {
+      width: 100%;
+      height: calc(100vh - 150px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: auto;
+    }
+
+    @media (min-width: breakpoint-min(xl)) {
+      margin-left: 8%;
+    }
   }
 
   .nav-link {
       margin-bottom: 38px;
+      text-align: center;
+  }
+
+  .navbar-nav {
+    @media (max-width: breakpoint-max(md)) {
+      margin-top: 100px;
+    }
+  }
+
+  @media (max-width: breakpoint-max(xl)) {
+    top: 130px;
+    left: 0;
+  }
+
+  @media (min-width: breakpoint-min(xl)) {
+    margin-top: 19%;
+    margin-left: 30%;
+    font-size: 32px;
+    line-height: 36.98px;
   }
 }

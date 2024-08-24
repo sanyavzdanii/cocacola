@@ -8,6 +8,7 @@ $(document).ready(function() {
     $('#menu-button').on('click', function(e) {
         $('#menu-button').toggleClass("touch");
         $('.second-menu').toggleClass("show");
+        $('html').toggleClass("hidden-scroll");
     });
 
     // Обработчик формы обратной связи
@@ -27,6 +28,9 @@ $(document).ready(function() {
                 }
             }
         });
+    });
+    document.querySelectorAll('.header__menu .nav-item').forEach(item => {
+        item.setAttribute('data-text', item.textContent);
     });
 
 
