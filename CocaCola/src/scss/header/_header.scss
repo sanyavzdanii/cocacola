@@ -1,5 +1,6 @@
 .header {
   position: fixed;
+  z-index: 100;
 }
 
 .header__logo {
@@ -114,6 +115,12 @@
     height: 60px;
     background: rgba($black, 0.4);
     border-radius: 50% 0 50% 50%;
+    transition: background 0.2s ease-in-out;
+  }
+  &:hover:before {
+    @media (hover: hover) {
+      background: rgba($black, 0.55);
+    }
   }
 
   .bar1, .bar2, .bar3 {

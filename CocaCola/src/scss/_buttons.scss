@@ -1,0 +1,57 @@
+.btn1 {
+  position: relative;
+  display: inline-block;
+  border: 2px solid $textColor;
+  border-radius: 20px 20px 20px 0;
+  padding: 12px 43px;
+  font-family: $firstFont;
+  font-size: 16px;
+  line-height: 18.75px;
+  color: $textColor;
+  text-decoration: none;
+  overflow: hidden;
+  transition: color 0.7s ease-in-out;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: calc(50% - 450px);
+    left: calc(50% - 450px);
+    //margin-top: -350px;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    background: rgba($textColor, 0);
+    border-radius: 50%;
+    transition: all 0.65s ease-in-out;
+  }
+  &:hover {
+    @media (hover: hover) {
+      color: $bgColor;
+      animation-name: blink;
+      animation-timing-function: linear;
+      animation-duration: 2.55s;
+      animation-iteration-count: infinite;
+      animation-delay: 0.7s;
+    }
+  }
+  &:hover:before {
+    @media (hover: hover) {
+      width: 1000px;
+      height: 1000px;
+      bottom: calc(100% - 500px);
+      left: calc(100% - 650px);
+      background: rgba($textColor, 1);
+      animation-name: blink;
+      animation-timing-function: linear;
+      animation-duration: 2.55s;
+      animation-iteration-count: infinite;
+      animation-delay: 0.7s;
+    }
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.9;
+  }
+}
