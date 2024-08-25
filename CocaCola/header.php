@@ -4,6 +4,9 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php wp_title('|', true, 'right'); ?></title>
+    <?php if (is_page_template('home.php')) : ?>
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/snow/style.css">
+    <?php endif ?>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

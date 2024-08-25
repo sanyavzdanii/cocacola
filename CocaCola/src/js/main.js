@@ -3,6 +3,17 @@ import 'bootstrap';
 import '@popperjs/core';
 import '../scss/style.scss';
 
+window.addEventListener('load', function() {
+    // Ваш код, который выполнится после полной загрузки страницы
+    console.log('Все ресурсы страницы загружены!');
+    // Вызов вашей функции
+    windowOnloadAdd();
+});
+
+function windowOnloadAdd() {
+    setTimeout(() => document.querySelector('.mySwiper-cloud').classList.add('show'), 3000);
+}
+
 $(document).ready(function() {
     // Меню шариком
     $('#menu-button').on('click', function(e) {

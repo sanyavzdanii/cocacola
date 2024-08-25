@@ -10,7 +10,7 @@ function CocaCola_theme_setup() {
     ));
 
     register_nav_menus(array(
-        'main-menu-2' => __('Main Menu 2', 'CocaCola'),
+        'main-menu-2' => __('Right Menu', 'CocaCola'),
     ));
 }
 add_action('after_setup_theme', 'CocaCola_theme_setup');

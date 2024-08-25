@@ -33,6 +33,13 @@ swiper-slide {
   align-items: center;
 }
 
+swiper-slide .bg1 {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
 .h100, .h100 body {
   position: relative;
   height: 100%;

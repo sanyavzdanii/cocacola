@@ -8,13 +8,81 @@
   background-position: center;
   animation-name: blink;
   animation-timing-function: linear;
-  animation-duration: 3.2s;
+  animation-duration: 7.2s;
   animation-iteration-count: infinite;
-  animation-delay: 0.7s;
+  //animation-delay: 0.7s;
+}
+
+.mySwiper-ded-moroz {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 883px;
+  height: 575px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mySwiper-cloud {
+  position: absolute;
+  right: 400px;
+  bottom: 246px;
+  width: 280px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out, right 0.3s ease-in-out;
+  &.show {
+    opacity: 1;
+    transform: scale(1);
+    right: 513px;
+  }
+
+  &__inner {
+    width: 174px;
+    font-family: $secondFont;
+    font-size: 18px;
+    line-height: 20.8px;
+    color: $black;
+  }
+}
+
+.mySwiper-sneginka {
+  position: fixed;
+  z-index: 2;
+  left: -190px;
+  bottom: 0;
+  width: 459px;
+  height: 460px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: rotateSneginka 14s infinite;
+  animation-timing-function: cubic-bezier(0.42, 0, 0.75, 1);
+  transition: bottom 1.55s ease-in-out;
+  &.move {
+    bottom: calc(100vh - 330px);
+  }
 }
 
 @keyframes blink {
+  25% {
+    opacity: 0.05;
+  }
   50% {
+    opacity: 0.6;
+  }
+  75% {
     opacity: 0.1;
+  }
+}
+
+@keyframes rotateSneginka {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
