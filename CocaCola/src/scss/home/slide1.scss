@@ -66,6 +66,28 @@
   }
 }
 
+.h-flex {
+  font-family: $secondFont;
+  font-size: 56px;
+  line-height: 67.21px;
+
+  @media (min-width: breakpoint-min(xl)) {
+    font-size: 72px;
+    line-height: 83.21px;
+  }
+}
+
+.p-flex {
+  font-family: $secondFont;
+  font-size: 26px;
+  line-height: 31.21px;
+
+  @media (min-width: breakpoint-min(xl)) {
+    font-size: 38px;
+    line-height: 43.92px;
+  }
+}
+
 @keyframes blink {
   25% {
     opacity: 0.05;

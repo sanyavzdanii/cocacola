@@ -19,8 +19,8 @@ get_header();
                     Scroll down for more !
                 </div>
             </div>
-            <h1 class="pb-2 mb-1 pb-xl-3 text-start"><?php the_title(); ?></h1>
-            <p class="pb-4 mb-3 pb-xl-3 mb-xl-2 text-start">Lorem ipsum descripsum</p>
+            <h1 class="h-flex pb-2 mb-1 pb-xl-3 text-start"><?php the_title(); ?></h1>
+            <p class="p-flex pb-4 mb-3 pb-xl-3 mb-xl-2 text-start">Lorem ipsum descripsum</p>
             <div class="d-flex justify-content-center align-items-center justify-content-xl-start pt-1"><a href="#"><a class="btn1" href="#">Call to action</div></a></div>
         </div>
     </swiper-slide>
@@ -29,18 +29,67 @@ get_header();
         <div class="container">
             <div class="row">
                 <div class="col-xl-7">
-                    <h2 class="text-start mb-4 pb-xl-1">At least somewhere you can feel new year atmosphere</h2>
-                    <p class="text-start mb-4 pb-xl-1">Choose your present:</p>
+                    <h2 class="h-flex text-start mb-4 pb-xl-1">At least somewhere you can feel new year atmosphere</h2>
+                    <p class="p-flex text-start mb-4 pb-xl-1">Choose your present:</p>
+                    <div class="d-flex align-items-center justify-content-center justify-content-xl-start">
+                        <div class="prize-button active d-flex justify-content-center align-items-center me-1 me-xl-4" data-id="1">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/Slide2/new-year-sock 1.webp" width="70" height="121" alt="sock">
+                        </div>
+                        <div class="prize-button d-flex justify-content-center align-items-center me-1 me-xl-4" data-id="2">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/Slide2/caps-2.webp" width="124" height="94" alt="caps">
+                        </div>
+                        <div class="prize-button d-flex justify-content-center align-items-center me-1 me-xl-4" data-id="3">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/Slide2/new-year-bag 1.webp" width="95" height="100" alt="new year bag">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xl-5">2</div>
+                <div class="col-xl-5">
+                    <div class="prize-box active flex-wrap flex-xl-nowrap align-items-center">
+                        <div>
+                            <h3 class="prize-box__h">Best sock ever</h3>
+                            <h3 class="prize-box__h">Write us for real presents</h3>
+                            <p class="prize-box__p">Reuglar sock have no present inside Lorem Ipsum is simply dumm  y text of the printing and types etting industry. Lorem </p>
+                        </div>
+                        <div class="prize-box__img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/Slide2/new-year-sock 1.webp" width="70" height="121" alt="sock">
+                        </div>
+
+                    </div>
+                    <div class="prize-box flex-wrap flex-xl-nowrap align-items-center">
+                        <div>
+                            <h3 class="prize-box__h">Best caps ever</h3>
+                            <p class="prize-box__p">Reuglar sock have no present inside Lorem Ipsum is simply dumm  y text of the printing and types etting industry. Lorem </p>
+                        </div>
+                        <div class="prize-box__img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/Slide2/caps-2.webp" width="124" height="94" alt="caps">
+                        </div>
+
+                    </div>
+                    <div class="prize-box flex-wrap flex-xl-nowrap align-items-center">
+                        <div>
+                            <h3 class="prize-box__h">Best new year bag ever</h3>
+                            <p class="prize-box__p">Reuglar sock have no present inside Lorem Ipsum is simply dumm  y text of the printing and types etting industry. Lorem </p>
+                        </div>
+                        <div class="prize-box__img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/Slide2/new-year-bag 1.webp" width="95" height="100" alt="new year bag">
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>
+        <div class="bg1 w-100 h-100" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/Slide2/merry-christmas-xmas-night-christmas-reindeer-artwork-happy-new-year 1.webp"></div>
+            <div class="container">
+ds
+            </div>
+        </div>
+    </swiper-slide>
 </swiper-container>
 
 <script src="<?php echo get_template_directory_uri(); ?>/assets/swiper-element-bundle.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/snow/pure-snow.js" defer></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/sneginka.js" defer></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/home.js" defer></script>
 
 <?php get_footer(); ?>
