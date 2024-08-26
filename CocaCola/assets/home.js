@@ -51,3 +51,36 @@ $prizeButton.forEach(item => {
         document.querySelector(`.prize-box:nth-of-type(${index})`).classList.add('active');
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const swiperElement = document.querySelector('swiper-container');
+    const swiperWrapper = swiperElement ? swiperElement.querySelector('.swiper-wrapper') : null;
+
+    if (window.innerWidth < 768) {
+        if (swiperElement && swiperElement.swiper) {
+            swiperElement.swiper.destroy(true, true); // Уничтожаем Swiper
+
+            if (swiperWrapper) {
+                swiperWrapper.style.transform = 'none'; // Сбрасываем трансформацию, если элемент существует
+            }
+
+            swiperElement.style.height = 'auto'; // Сбрасываем высоту контейнера
+        }
+    }
+
+    window.addEventListener('resize', function() {
+        if (window.innerWidth < 768) {
+            if (swiperElement && swiperElement.swiper) {
+                swiperElement.swiper.destroy(true, true);
+
+                if (swiperWrapper) {
+                    swiperWrapper.style.transform = 'none';
+                }
+
+                swiperElement.style.height = 'auto';
+            }
+        }
+    });
+});
+
+

@@ -4,8 +4,6 @@ import '@popperjs/core';
 import '../scss/style.scss';
 
 window.addEventListener('load', function() {
-    // Ваш код, который выполнится после полной загрузки страницы
-    console.log('Все ресурсы страницы загружены!');
     // Вызов вашей функции
     windowOnloadAdd();
 });
@@ -45,4 +43,26 @@ $(document).ready(function() {
     });
 
 
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const swiperElement = document.querySelector('swiper-container');
+
+    if (window.innerWidth < 768) {
+        if (swiperElement && swiperElement.swiper) {
+            swiperElement.swiper.destroy(true, true); // Уничтожаем Swiper
+            swiperElement.querySelector('.swiper-wrapper').style.transform = 'none';
+            swiperElement.style.height = 'auto'; // Сбрасываем высоту контейнера
+        }
+    }
+
+    window.addEventListener('resize', function() {
+        if (window.innerWidth < 768) {
+            if (swiperElement && swiperElement.swiper) {
+                swiperElement.swiper.destroy(true, true);
+                swiperElement.querySelector('.swiper-wrapper').style.transform = 'none';
+                swiperElement.style.height = 'auto';
+            }
+        }
+    });
 });
