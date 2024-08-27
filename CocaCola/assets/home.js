@@ -1,3 +1,5 @@
+
+
 const targetSlide2or3 = document.querySelector('swiper-slide:nth-of-type(2), swiper-slide:nth-of-type(3)');
 const targetSlide1 = document.querySelector('swiper-slide:nth-of-type(1)');
 const $prizeButton = document.querySelectorAll('.prize-button');
@@ -52,35 +54,42 @@ $prizeButton.forEach(item => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const swiperElement = document.querySelector('swiper-container');
-    const swiperWrapper = swiperElement ? swiperElement.querySelector('.swiper-wrapper') : null;
+let swiper;
 
-    if (window.innerWidth < 768) {
-        if (swiperElement && swiperElement.swiper) {
-            swiperElement.swiper.destroy(true, true); // Уничтожаем Swiper
-
-            if (swiperWrapper) {
-                swiperWrapper.style.transform = 'none'; // Сбрасываем трансформацию, если элемент существует
-            }
-
-            swiperElement.style.height = 'auto'; // Сбрасываем высоту контейнера
-        }
+function initSwiper() {
+    if (window.innerWidth >= 768) {
+        swiper = new Swiper('swiper-container', {
+            slidesPerView: 1,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
     }
+}
 
-    window.addEventListener('resize', function() {
-        if (window.innerWidth < 768) {
-            if (swiperElement && swiperElement.swiper) {
-                swiperElement.swiper.destroy(true, true);
+function destroySwiper() {
+    if (swiper && window.innerWidth < 768) {
+        swiper.destroy(true, true); // Уничтожаем Swiper
+        swiper = undefined;
+        document.querySelector('.mySwiper').style.display = 'block'; // Показываем все слайды
+    }
+}
 
-                if (swiperWrapper) {
-                    swiperWrapper.style.transform = 'none';
-                }
+// Инициализация Swiper при загрузке страницы
+initSwiper();
 
-                swiperElement.style.height = 'auto';
-            }
-        }
-    });
+// Обработка изменения размера экрана
+window.addEventListener('resize', function() {
+    destroySwiper();
+    initSwiper();
 });
+
+// Убедитесь, что слайды видимы на мобильных устройствах
+if (window.innerWidth < 768) {
+    document.querySelector('.mySwiper').style.display = 'block';
+}
+
 
 

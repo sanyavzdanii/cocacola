@@ -21,6 +21,11 @@
   height: 575px;
   background-size: contain;
   background-repeat: no-repeat;
+
+  @media (max-width: breakpoint-max(md)) {
+    width: 560px;
+    height: 400px;
+  }
 }
 
 .mySwiper-cloud {
