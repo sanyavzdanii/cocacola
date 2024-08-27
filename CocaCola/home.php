@@ -81,7 +81,7 @@ get_header();
     </swiper-slide>
     <swiper-slide>
         <div class="bg1 w-100 h-100" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/Slide2/merry-christmas-xmas-night-christmas-reindeer-artwork-happy-new-year 1.webp"></div>
-            <div class="container contacts-wrapper">
+            <div class="container contacts-wrapper pt-4 pt-xl-0">
                 <?php echo do_shortcode( '[contact-form-7 id="747998f" title="Contact form 1"]' ); ?>
             </div>
         </div>
