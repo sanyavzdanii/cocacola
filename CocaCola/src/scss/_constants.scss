@@ -41,15 +41,187 @@ swiper-slide .bg1 {
 }
 
 .h100, .h100 body {
-  position: relative;
+  @media (min-width: breakpoint-min(xl)) {
+    position: relative;
+    height: 100%;
+  }
+}
+
+swiper-slide {
   height: 100%;
+}
 
+@media (max-width: 1199px) {
+  /* Убираем overflow */
+  swiper-container, .swiper-container, .swiper-wrapper {
+    overflow: visible !important;
+    height: auto !important;
+  }
 
+  /* Устанавливаем автоматическую высоту для слайдов */
+  swiper-slide, .swiper-slide {
+    height: auto !important;
+  }
+
+  /* Скрываем кнопки навигации */
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
+  /* Убедитесь, что body и html позволяют прокрутку */
+  html, body {
+    overflow: visible !important;
+    height: auto !important;
+  }
 }
 
 #snow {
   z-index: 3;
   position: absolute;
+}
+
+.contacts {
+  input, select, textarea {
+    background: transparent;
+    color: $textColor;
+    width: 100%;
+    border-radius: 15px;
+    border: 3px solid $textColor;
+    padding: 15px 22px;
+    &::placeholder {
+      color: $textColor;
+    }
+    &:focus {
+      @media (hover: hover) {
+        outline: unset;
+        border-right-color: $textColor;
+      }
+    }
+  }
+
+  .btn1 {
+    &:hover {
+      @media (hover: hover) {
+        background: $textColor;
+      }
+    }
+  }
+
+  @media (min-width: breakpoint-min(xl)) {
+    max-width: 468px;
+  }
+}
+
+.contacts-wrapper .wpcf7-response-output {
+  @media (min-width: breakpoint-min(xl)) {
+    max-width: 430px;
+  }
+}
+
+.selectel {
+  position: relative;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+  border-radius: 10px;
+  user-select: none;
+  &.open::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0; /* Положение треугольника справа */
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: 12px solid #FFFCFC; /* Цвет треугольника */
+  }
+  &.open::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Положение треугольника слева */
+    width: 0;
+    height: 0;
+    border-left: 0 solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #FFFCFC; /* Цвет треугольника */
+  }
+}
+
+.selectlist > div, .button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.selectlist > div:hover, .active-list {
+  color: #D02B2B;
+}
+
+.button {
+  background: transparent;
+  color: $textColor;
+  width: 100%;
+  border-radius: 15px;
+  border: 3px solid $textColor;
+  padding: 15px 22px;
+  position: relative;
+}
+
+.button:before {
+  content: "";
+  display: block;
+  transform: rotate(0);
+  transition: transform .1s;
+  background-color: #fff;
+  height: 2px;
+  width: 7px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  transform: rotate(45deg);
+  right: 29px;
+}
+
+.button:after {
+  content: "";
+  display: block;
+  transform: rotate(0);
+  transition: transform .1s;
+  background-color: #fff;
+  height: 2px;
+  width: 7px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  transform: rotate(-45deg);
+}
+
+
+.selectlist {
+  max-height: 120px;
+  overflow: auto;
+  display: none;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: #FFFCFC;
+  color: #CECECE;
+  padding-top: 6px;
+  padding-bottom: 10px;
+}
+
+.selectlist::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+  height: 4px;
+}
+
+.selectlist::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: #8d8d8d;
 }
 
 @media (max-width: 767px) {

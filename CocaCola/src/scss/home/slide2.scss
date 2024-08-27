@@ -26,7 +26,6 @@
 .prize-box {
   display: none;
   padding: 38px 15px 18px;
-  border: 3px solid $textColor;
   border-radius: 20px;
   text-align: center;
   &.active {
@@ -54,6 +53,7 @@
   @media (min-width: breakpoint-min(xl)) {
     padding: 58px 35px 38px;
     text-align: left;
+    border: 3px solid $textColor;
   }
 }
 

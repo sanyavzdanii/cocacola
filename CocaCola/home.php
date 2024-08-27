@@ -44,7 +44,7 @@ get_header();
                     </div>
                 </div>
                 <div class="col-xl-5">
-                    <div class="prize-box active flex-wrap flex-xl-nowrap align-items-center">
+                    <div class="prize-box active flex-wrap flex-xl-nowrap align-items-center justify-content-center">
                         <div>
                             <h3 class="prize-box__h">Best sock ever</h3>
                             <h3 class="prize-box__h">Write us for real presents</h3>
@@ -81,8 +81,8 @@ get_header();
     </swiper-slide>
     <swiper-slide>
         <div class="bg1 w-100 h-100" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/Slide2/merry-christmas-xmas-night-christmas-reindeer-artwork-happy-new-year 1.webp"></div>
-            <div class="container">
-ds
+            <div class="container contacts-wrapper">
+                <?php echo do_shortcode( '[contact-form-7 id="747998f" title="Contact form 1"]' ); ?>
             </div>
         </div>
     </swiper-slide>

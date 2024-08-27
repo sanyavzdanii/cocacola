@@ -2,12 +2,13 @@
   position: relative;
   display: inline-block;
   border: 2px solid $textColor;
-  border-radius: 20px 20px 20px 0;
+  border-radius: 20px 20px 20px 0 !important;
   padding: 12px 43px;
   font-family: $firstFont;
   font-size: 16px;
   line-height: 18.75px;
   color: $textColor;
+  background: transparent;
   text-decoration: none;
   overflow: hidden;
   transition: color 0.7s ease-in-out;
