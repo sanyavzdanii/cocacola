@@ -15,6 +15,11 @@
 
   img {
     object-fit: cover;
+
+    @media (max-width: breakpoint-max(xl)) {
+      width: auto;
+      height: 70px;
+    }
   }
 
   @media (min-width: breakpoint-min(xl)) {
@@ -59,6 +64,12 @@
 
 .prize-box__img {
   min-width: 148px;
+
+  img {
+    @media (max-width: breakpoint-max(xl)) {
+      max-height: 175px;
+    }
+  }
 
   @media (min-width: breakpoint-min(xl)) {
     margin-left: 31px;

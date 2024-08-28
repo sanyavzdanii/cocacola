@@ -6,6 +6,7 @@
     <title><?php wp_title('|', true, 'right'); ?></title>
     <?php if (is_page_template('home.php')) : ?>
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/snow/style.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/swiper-bundle.min.css">
     <?php endif ?>
     <?php wp_head(); ?>
 </head>
